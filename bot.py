@@ -22,18 +22,10 @@ date_time = DateTime()
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
     user_id = message.from_user.id
-    username = message.from_user.username
-    lastname = message.from_user.last_name
-    firstname = message.from_user.first_name
-    is_premium = message.from_user.is_premium
-
-    user_data = {
-        "user_id": user_id,
-        "username": username,
-        "lastname": lastname,
-        "firstname": firstname,
-        "is_premium": is_premium
-    }
+    # username = message.from_user.username
+    # lastname = message.from_user.last_name
+    # firstname = message.from_user.first_name
+    # is_premium = message.from_user.is_premium
 
     work_hrs_db.create(user_id)
 

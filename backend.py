@@ -12,6 +12,7 @@ class DateTime:
 
     def datetime_to_str(self, dt: datetime):
         self.datetime_str = dt.strftime("%Y-%m-%d %H:%M")
+        return self.datetime_str
 
     def clock_in(self) -> datetime:
         current_datetime = datetime.now().replace(second=0, microsecond=0)
@@ -140,12 +141,3 @@ class Settings(Database):
                        f"round_to INTEGER);")
         connection.commit()
         connection.close()
-
-
-
-
-
-
-
-
-
