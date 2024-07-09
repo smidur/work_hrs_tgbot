@@ -2,6 +2,8 @@ import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
+
+import texts
 from keyboards import *
 from config import env
 from backend import *
@@ -79,6 +81,7 @@ async def clock_out(call: types.CallbackQuery):
 # start polling process to wait for updates from telegram server
 async def main():
     commands = [
+        types.BotCommand(command=texts.cmd_start),
         types.BotCommand(command=texts.cmd_settings, description=texts.cmd_settings_descr),
         types.BotCommand(command=texts.cmd_help, description=texts.cmd_help_descr),
     ]
